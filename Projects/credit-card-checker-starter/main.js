@@ -24,9 +24,47 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 
 // Add your functions below:
+const validateCredit = (arr) => {
+    let sum = 0;
+    let bEven = false;
+    let cDigit = 0;
 
+    for (let i = arr.length - 1; i >= 0; i--) {
+        cDigit = arr[i];
 
+        if (bEven) {
+            if ((cDigit * 2) > 9) {
+                sum += (cDigit * 2) - 9;
+            }
+            else {
+                sum += cDigit * 2;
+            }
+        }
+        else {
+            sum += cDigit;
+        }
+        bEven = !bEven;
+    }
+    if (sum % 10 == 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
 
+}
+
+console.log(validateCredit(valid1))
+console.log(validateCredit(valid2))
+console.log(validateCredit(valid3))
+console.log(validateCredit(valid4))
+console.log(validateCredit(valid5))
+
+console.log(validateCredit(invalid1))
+console.log(validateCredit(invalid2))
+console.log(validateCredit(invalid3))
+console.log(validateCredit(invalid4))
+console.log(validateCredit(invalid5))
 
 
 
