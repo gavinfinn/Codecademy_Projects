@@ -87,7 +87,9 @@ const idInvalidCardCompanies = (invalidCards) => {
     return invalidCompanies;
 }
 
+const cardParse = (str) => {
+    const cardNum = Array.from(String(str), Number)
+    return cardNum;
+}
+
 console.log(idInvalidCardCompanies(findInvalidCards(batch)))
-
-
-
