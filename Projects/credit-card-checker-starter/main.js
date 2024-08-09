@@ -54,19 +54,40 @@ const validateCredit = (arr) => {
 
 }
 
-console.log(validateCredit(valid1))
-console.log(validateCredit(valid2))
-console.log(validateCredit(valid3))
-console.log(validateCredit(valid4))
-console.log(validateCredit(valid5))
+const findInvalidCards = (nestedArr) => {
+    const invalid = nestedArr.filter((card) => 
+        !validateCredit(card));
+    return invalid;
+}
 
-console.log(validateCredit(invalid1))
-console.log(validateCredit(invalid2))
-console.log(validateCredit(invalid3))
-console.log(validateCredit(invalid4))
-console.log(validateCredit(invalid5))
+const idInvalidCardCompanies = (invalidCards) => {
+    invalidCompanies = []
+    invalidCards.forEach((card) => {
+        switch (card[0]) {
+            case 3: 
+                if (invalidCompanies.includes('Amex')) { break };
+                invalidCompanies.push('Amex');
+                break;
+            case 4:
+                if (invalidCompanies.includes('Visa')) { break };
+                invalidCompanies.push('Visa');
+                break;
+            case 5:
+                if (invalidCompanies.includes('Mastercard')) { break };
+                invalidCompanies.push('Mastercard');
+                break;
+            case 6: 
+                if (invalidCompanies.includes('Discover')) { break };
+                invalidCompanies.push('Discover');
+                break;
+            default:
+                console.log("Company not found")
+        }
+    }) 
+    return invalidCompanies;
+}
 
-
+console.log(idInvalidCardCompanies(findInvalidCards(batch)))
 
 
 
