@@ -1,6 +1,6 @@
 Collection of Projects submitted to Codecademy
 
-Contains:
-  JavaScript:
-    Credit Card checking algorithm
-    Mysterious Organism Object Factory 
+Contains:\n
+  JavaScript:\n
+    Credit Card checking algorithm\n
+    Mysterious Organism Object Factory \n
