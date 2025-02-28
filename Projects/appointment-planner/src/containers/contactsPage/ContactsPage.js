@@ -19,7 +19,7 @@ export const ContactsPage = ({ contacts, addContact }) => {
     Add contact info and clear data
     if the contact name is not a duplicate
     */
-    if (duplicate !== false) {
+    if (!duplicate) {
       addContact(name, phone, email)
       setName("");
       setPhone("");
@@ -64,6 +64,7 @@ export const ContactsPage = ({ contacts, addContact }) => {
       <hr />
       <section>
         <h2>Contacts</h2>
+        <TileList tiles={contacts} />
       </section>
     </div>
   );
