@@ -22,7 +22,7 @@ function App() {
                 {
                   name: name,
                   phone: phone,
-                  email: email
+                  email: email,
                 } 
               ]);
   };
@@ -34,8 +34,8 @@ function App() {
                 name: name,
                 contact: contact, 
                 date: date,
-                time: time
-              }
+                time: time,
+              },
     ]);
   };
 
